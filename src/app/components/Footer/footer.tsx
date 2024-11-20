@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { FaFacebookF, FaLinkedinIn, FaXTwitter  } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 
