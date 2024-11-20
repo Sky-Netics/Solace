@@ -72,14 +72,52 @@ const Navbar = () => {
 
                 {
                     showResponsiveHeader && (
-                        <div className="w-full h-[150px] absolute bg-red-800 left-0 top-0 z-50">
+                        <div className="w-full h-full fixed left-0 top-0 z-100 bg-white">
 
-                            <div className="w-full flex justify-between">
-                                <h1>Menue</h1>
+                            <div className="w-full flex justify-between items-center border-b py-5 px-4">
+                                <h1 className="text-[20px]">Menue</h1>
                             
                                 <div onClick={showHeaderHandler}>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 5L15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                    <svg className="cursor-pointer" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5L5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path><path d="M5 5L15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
                                 </div>
+                            </div>
+
+                            <div className="border-b pt-5 pl-4">
+                                <button className="bg-gray-200 py-2 px-4 text-[14px] rounded-3xl">Shop all</button>
+
+                                <ul className="pr-4 mt-4">
+                                    <li className="flex justify-between items-center px-4 hover:bg-gray-100 cursor-pointer transition py-3 rounded-xl">
+                                        Beds
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"><title>Chevron right icon</title><path fillRule="evenodd" clipRule="evenodd" d="M7.55806 4.55806C7.80214 4.31398 8.19786 4.31398 8.44194 4.55806L13.4419 9.55806C13.686 9.80214 13.686 10.1979 13.4419 10.4419L8.44194 15.4419C8.19786 15.686 7.80214 15.686 7.55806 15.4419C7.31398 15.1979 7.31398 14.8021 7.55806 14.5581L12.1161 10L7.55806 5.44194C7.31398 5.19786 7.31398 4.80214 7.55806 4.55806Z" fill="currentColor"></path></svg>
+                                    </li>
+                                    <li className="flex justify-between items-center px-4 hover:bg-gray-100 cursor-pointer transition py-3 rounded-xl">
+                                        Chairs
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"><title>Chevron right icon</title><path fillRule="evenodd" clipRule="evenodd" d="M7.55806 4.55806C7.80214 4.31398 8.19786 4.31398 8.44194 4.55806L13.4419 9.55806C13.686 9.80214 13.686 10.1979 13.4419 10.4419L8.44194 15.4419C8.19786 15.686 7.80214 15.686 7.55806 15.4419C7.31398 15.1979 7.31398 14.8021 7.55806 14.5581L12.1161 10L7.55806 5.44194C7.31398 5.19786 7.31398 4.80214 7.55806 4.55806Z" fill="currentColor"></path></svg>
+                                    </li>
+                                    <li className="flex justify-between items-center px-4 hover:bg-gray-100 cursor-pointer transition py-3 rounded-xl">
+                                        Sofas
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"><title>Chevron right icon</title><path fillRule="evenodd" clipRule="evenodd" d="M7.55806 4.55806C7.80214 4.31398 8.19786 4.31398 8.44194 4.55806L13.4419 9.55806C13.686 9.80214 13.686 10.1979 13.4419 10.4419L8.44194 15.4419C8.19786 15.686 7.80214 15.686 7.55806 15.4419C7.31398 15.1979 7.31398 14.8021 7.55806 14.5581L12.1161 10L7.55806 5.44194C7.31398 5.19786 7.31398 4.80214 7.55806 4.55806Z" fill="currentColor"></path></svg>
+                                    </li>
+                                    <li className="flex justify-between items-center px-4 hover:bg-gray-100 cursor-pointer transition py-3 rounded-xl">
+                                        Tables
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"><title>Chevron right icon</title><path fillRule="evenodd" clipRule="evenodd" d="M7.55806 4.55806C7.80214 4.31398 8.19786 4.31398 8.44194 4.55806L13.4419 9.55806C13.686 9.80214 13.686 10.1979 13.4419 10.4419L8.44194 15.4419C8.19786 15.686 7.80214 15.686 7.55806 15.4419C7.31398 15.1979 7.31398 14.8021 7.55806 14.5581L12.1161 10L7.55806 5.44194C7.31398 5.19786 7.31398 4.80214 7.55806 4.55806Z" fill="currentColor"></path></svg>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <ul className="pr-4 mt-4">
+                                    <li className="px-4 py-3">
+                                        <Link href={'/collection'}>
+                                            Collection
+                                        </Link>
+                                    </li>
+                                    <li className="px-4 py-3">
+                                        <Link href={'./about-us'}>
+                                            About Us
+                                        </Link>
+                                    </li>
+                                </ul>
                             </div>
                             
                         </div>
@@ -102,7 +140,7 @@ const Navbar = () => {
             <div>
                 <ul className="flex px-5 ml-20">
 
-                    <li className="mx-4">
+                    <li className="px-3 py-3 hover:bg-gray-200 ">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <title>Search icon</title>
                             <path fillRule="evenodd" clipRule="evenodd" d="M9.66667 3.125C6.32995 3.125 3.625 5.82995 3.625 9.16667C3.625 12.5034 6.32995 15.2083 9.66667 15.2083C13.0034 15.2083 15.7083 12.5034 15.7083 9.16667C15.7083 5.82995 13.0034 3.125 9.66667 3.125ZM2.375 9.16667C2.375 5.13959 5.63959 1.875 9.66667 1.875C13.6937 1.875 16.9583 5.13959 16.9583 9.16667C16.9583 13.1937 13.6937 16.4583 9.66667 16.4583C5.63959 16.4583 2.375 13.1937 2.375 9.16667Z" fill="currentColor"></path>
@@ -110,7 +148,7 @@ const Navbar = () => {
                         </svg>
                     </li>
 
-                    <li className="mx-4">
+                    <li className="px-3 py-3">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <title>User Icon</title>
                             <path fillRule="evenodd" clipRule="evenodd" d="M10.4997 3.125C8.54367 3.125 6.95801 4.71066 6.95801 6.66667C6.95801 8.62267 8.54367 10.2083 10.4997 10.2083C12.4557 10.2083 14.0413 8.62267 14.0413 6.66667C14.0413 4.71066 12.4557 3.125 10.4997 3.125ZM5.70801 6.66667C5.70801 4.0203 7.85331 1.875 10.4997 1.875C13.146 1.875 15.2913 4.0203 15.2913 6.66667C15.2913 9.31303 13.146 11.4583 10.4997 11.4583C7.85331 11.4583 5.70801 9.31303 5.70801 6.66667Z" fill="currentColor"></path>
@@ -118,7 +156,7 @@ const Navbar = () => {
                         </svg>
                     </li>
 
-                    <li className="mx-4">
+                    <li className="px-4 py-4">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <title>Bag icon</title>
                             <path d="M6.6598 18.7083C7.433 18.7083 8.0598 18.0554 8.0598 17.25C8.0598 16.4446 7.433 15.7917 6.6598 15.7917C5.88661 15.7917 5.2598 16.4446 5.2598 17.25C5.2598 18.0554 5.88661 18.7083 6.6598 18.7083Z" fill="currentColor"></path>
