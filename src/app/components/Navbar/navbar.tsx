@@ -39,7 +39,7 @@ const Navbar = () => {
     }
 
     return ( 
-        <div className="flex justify-between items-center border-b py-5 px-[87px] max-xl:px-[45px] ">
+        <div className="flex justify-between items-center border-b py-5 px-[87px] max-xl:px-[45px]">
 
             <div className="max-[900px]:hidden">
                 <ul className="flex">
@@ -75,7 +75,7 @@ const Navbar = () => {
                         <div className="w-full h-full fixed left-0 top-0 z-100 bg-white">
 
                             <div className="w-full flex justify-between items-center border-b py-5 px-4">
-                                <h1 className="text-[20px]">Menue</h1>
+                                <h1 className="text-[20px]"> Menue </h1>
                             
                                 <div onClick={showHeaderHandler}>
                                     <svg className="cursor-pointer" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5L5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path><path d="M5 5L15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
