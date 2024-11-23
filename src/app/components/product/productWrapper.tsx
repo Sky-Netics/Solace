@@ -16,19 +16,19 @@ const fetchData = async (url:string)=>{
 }
 
 
-const ProductWrapper = async ({url}:{url:string}) => {
+const ProductWrapper = async ({url,topic,path}:{url:string,topic:string,path:string}) => {
     const products:ProductType[] = await fetchData(url);
     const productlength = products.length
-
+    
     return ( 
         <div>
             <div className="px-[47px] xl:px-[87px]">
                 <div className="my-10">
                     <Link href='/' className="flex items-center gap-2">
                         <div><FaArrowLeft /></div>
-                        <p>Back To Home Page</p>
+                        <p>{path}</p>
                     </Link>
-                    <p className="mt-2 text-4xl">All Products</p>
+                    <p className="mt-2 text-4xl">{topic}</p>
                 </div>
                 <div>
                     <p className="text-lightLight">{productlength} Products</p>
