@@ -22,7 +22,7 @@ const ProductWrapper = async ({url}:{url:string}) => {
 
     return ( 
         <div>
-            <div className="px-7">
+            <div className="px-[47px] xl:px-[87px]">
                 <div className="my-10">
                     <Link href='/' className="flex items-center gap-2">
                         <div><FaArrowLeft /></div>
@@ -31,15 +31,15 @@ const ProductWrapper = async ({url}:{url:string}) => {
                     <p className="mt-2 text-4xl">All Products</p>
                 </div>
                 <div>
-                    <p className="opacity-50">{productlength} Products</p>
+                    <p className="text-lightLight">{productlength} Products</p>
                     <Filter />
                 </div>
-                <div>
+                <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
                     {products.map((product,i)=>{
                         return (
                             <div key={i}>
-                                <div className="mb-5 w-full h-80 relative">
-                                    <Image className="w-full h-80" src={product.image} width={400} height={1000} alt={`prodcut${i}`} priority/>
+                                <div className="mb-5 w-full relative">
+                                    <Image className="w-full h-80 sm:h-[500px]" src={product.image} width={400} height={1000} alt={`prodcut${i}`} priority/>
                                     <div className="bg-gray-600 w-12 rounded-full h-12 absolute bottom-3 right-3 flex justify-center items-center"><IoCartOutline size={25} color="white"/></div>
                                 </div>
                                 <div className="text-center">
