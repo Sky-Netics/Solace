@@ -219,7 +219,7 @@ const CarouselComponent = ({title}:{title: string}) => {
       <div className="flex justify-between px-[100px] max-sm:px-[25px]">
         <h1 className="text-[32px] max-sm:text-[24px]">{title}</h1>
 
-        <div className="flex justify-between mb-[100px] h-[45px]">
+        <div className="flex justify-between mb-10 h-[45px]">
           <button
             onClick={() => carouselRef.current?.slidePrev()}
             className="bg-gray-200 px-[13px] rounded-[50%] mr-3"
