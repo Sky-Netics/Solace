@@ -38,9 +38,9 @@ const ProductWrapper = async ({url,topic,path}:{url:string,topic:string,path:str
                     {products.map((product,i)=>{
                         return (
                             <div key={i}>
-                                <div className="mb-5 w-full relative">
+                                <div className="mb-5 w-full relative group">
                                     <Image className="w-full h-80 sm:h-[500px]" src={product.image} width={400} height={1000} alt={`prodcut${i}`} priority/>
-                                    <div className="bg-gray-600 w-12 rounded-full h-12 absolute bottom-3 right-3 flex justify-center items-center"><IoCartOutline size={25} color="white"/></div>
+                                    <div className="bg-white w-12 rounded-full h-12 absolute bottom-3 right-3 flex justify-center items-center transition-opacity duration-300 sm:opacity-0 group-hover:opacity-100"><IoCartOutline size={25} color="black"/></div>
                                 </div>
                                 <div className="text-center">
                                     <p>{product.title}</p>
