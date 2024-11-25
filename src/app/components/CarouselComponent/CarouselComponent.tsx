@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -282,7 +283,9 @@ const CarouselComponent = ({title}:{title: string}) => {
         />
       </div>
 
-      <button className="mx-auto bg-[#090909] text-white px-5 py-3 rounded-3xl text-[14px]  transition-colors duration-500 hover:bg-[#171717]">View all</button>
+      <Link href="/shop" className="mx-auto">
+        <button className=" bg-[#090909] text-white px-5 py-3 rounded-3xl text-[14px]  transition-colors duration-500 hover:bg-[#171717]">View all</button>
+      </Link>
       
     </div>
   );
