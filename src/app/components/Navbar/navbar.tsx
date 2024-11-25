@@ -39,7 +39,7 @@ const Navbar = () => {
     }
 
     return ( 
-        <div className="flex justify-between items-center overflow-x-hidden border-b py-5 px-[87px] max-xl:px-[45px] max-sm:px-0">
+        <div className="flex justify-between items-center overflow-x-hidden border-b py-4 px-[87px] max-xl:px-[45px] max-sm:px-0">
 
             <div className="max-[900px]:hidden">
                 <ul className="flex">

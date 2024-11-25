@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -216,7 +215,7 @@ const CarouselComponent = ({title}:{title: string}) => {
   },[])
 
   return (
-    <div className="flex flex-col mb-[100px]">
+    <div className="flex flex-col">
       <div className="flex justify-between px-[100px] max-sm:px-[25px]">
         <h1 className="text-[32px] max-sm:text-[24px]">{title}</h1>
 
@@ -282,10 +281,6 @@ const CarouselComponent = ({title}:{title: string}) => {
           controlsStrategy="responsive"
         />
       </div>
-
-      <Link href="/shop" className="mx-auto">
-        <button className=" bg-[#090909] text-white px-5 py-3 rounded-3xl text-[14px]  transition-colors duration-500 hover:bg-[#171717]">View all</button>
-      </Link>
       
     </div>
   );

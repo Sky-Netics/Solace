@@ -155,6 +155,12 @@ export default function Home() {
 
       {/* Our bestsellers */}
         <CarouselComponent title={'Our bestsellers'}/>
+          
+          <div className="text-center mb-[130px]">      
+            <Link href="/shop" className="mx-auto">
+             <button className=" bg-[#090909] text-white px-5 py-3 rounded-3xl text-[14px]  transition-colors duration-500 hover:bg-[#171717]">View all</button>
+            </Link>
+          </div>
 
 
       {/* 10 years of inspiring interiors */}
