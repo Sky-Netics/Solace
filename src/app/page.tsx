@@ -5,6 +5,7 @@ import whiteSofa from '../../public/assets/white-sofa.jpg'
 import greenChair from '../../public/assets/green-chair.jpg'
 import brownChair from '../../public/assets/brown-chair.png'
 import CarouselComponent from "./components/CarouselComponent/CarouselComponent";
+import GetInspired from "./components/GetInspired/GetInspired";
 import Link from "next/link";
 
 export default function Home() {
@@ -157,17 +158,24 @@ export default function Home() {
 
 
       {/* 10 years of inspiring interiors */}
-        <div className="px-[100px] mb-[200px] relative">
+        <div className="px-[100px] mb-[100px] relative max-xl:px-[50px] max-sm:px-[15px]">
           
-          <Image src={brownChair} alt="Brown Chair" className="w-full h-[440px]"/>
+          <Image src={brownChair} alt="Brown Chair" className="w-full h-[440px] object-cover"/>
 
-          <div className="abso">
-
+          <div className="absolute inset-0 w-full top-0 right-0  flex justify-center items-center text-white">
+            <div className="flex-col flex items-center w-[600px] max-md:w-[450px] max-sm:w-[350px] max-sm:px-5">
+              <h1 className="text-[32px] mb-2 text-center">10 years of inspiring interiors</h1>
+              <p className="text-center">Explore our journey of crafting exquisite designer furniture and our commitment to quality and innovation.</p>
+              <Link href={'/about-us'}>
+                <button className="bg-[#090909] text-white mt-8 py-3 px-4 rounded-3xl text-[14px] transition hover:bg-[#0e0e0e]">About Us</button>
+              </Link>
+            </div>
           </div>
 
         </div>
 
-
+        {/* Get inspired */}
+          <GetInspired />
 
     </div>
   );
