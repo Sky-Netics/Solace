@@ -21,3 +21,9 @@ body {
   font-feature-settings: normal;
   font-variation-settings: normal;
 }
+
+@layer components{
+  .layout{
+    @apply p-4 sm:p-12 w-full max-w-[1400px] mx-auto ;
+  }
+}
