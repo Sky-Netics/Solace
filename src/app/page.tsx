@@ -3,10 +3,14 @@ import Chair from '../../public/assets/chair.webp'
 import pinkChair from '../../public/assets/pink-chair.webp'
 import whiteSofa from '../../public/assets/white-sofa.jpg'
 import greenChair from '../../public/assets/green-chair.jpg'
-import OurBestsellers from './components/OurBestsellers/ourBestSellers'
+import brownChair from '../../public/assets/brown-chair.png'
+import CarouselComponent from "./components/CarouselComponent/CarouselComponent";
 import Link from "next/link";
 
 export default function Home() {
+
+
+
   return (
     <div>
       
@@ -149,8 +153,19 @@ export default function Home() {
 
 
       {/* Our bestsellers */}
-        <OurBestsellers/>
-      
+        <CarouselComponent title={'Our bestsellers'}/>
+
+
+      {/* 10 years of inspiring interiors */}
+        <div className="px-[100px] mb-[200px] relative">
+          
+          <Image src={brownChair} alt="Brown Chair" className="w-full h-[440px]"/>
+
+          <div className="abso">
+
+          </div>
+
+        </div>
 
 
 

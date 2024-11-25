@@ -39,7 +39,7 @@ const Navbar = () => {
     }
 
     return ( 
-        <div className="flex justify-between items-center border-b py-5 px-[87px] max-xl:px-[45px]">
+        <div className="flex justify-between items-center overflow-x-hidden border-b py-5 px-[87px] max-xl:px-[45px] max-sm:px-0">
 
             <div className="max-[900px]:hidden">
                 <ul className="flex">
@@ -57,7 +57,7 @@ const Navbar = () => {
                 </ul>
             </div>
 
-            <div className="min-[900px]:hidden mr-4">
+            <div className="min-[900px]:hidden mr-4 max-sm:ml-4">
 
                 <svg 
                 onClick={showHeaderHandler}
@@ -74,7 +74,7 @@ const Navbar = () => {
                     showResponsiveHeader && (
                         <div className="w-full h-full fixed left-0 top-0 z-100 bg-white">
 
-                            <div className="w-full flex justify-between items-center border-b py-5 px-4">
+                            <div className="w-full flex justify-between items-center border-b py-5 pl-4 pr-8">
                                 <h1 className="text-[20px]"> Menue </h1>
                             
                                 <div onClick={showHeaderHandler}>
@@ -85,7 +85,7 @@ const Navbar = () => {
                             <div className="border-b pt-5 pl-4">
                                 <button className="bg-gray-200 py-2 px-4 text-[14px] rounded-3xl">Shop all</button>
 
-                                <ul className="pr-4 mt-4">
+                                <ul className="pr-5 mt-4">
                                     <li className="flex justify-between items-center px-4 hover:bg-gray-100 cursor-pointer transition py-3 rounded-xl">
                                         Beds
                                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"><title>Chevron right icon</title><path fillRule="evenodd" clipRule="evenodd" d="M7.55806 4.55806C7.80214 4.31398 8.19786 4.31398 8.44194 4.55806L13.4419 9.55806C13.686 9.80214 13.686 10.1979 13.4419 10.4419L8.44194 15.4419C8.19786 15.686 7.80214 15.686 7.55806 15.4419C7.31398 15.1979 7.31398 14.8021 7.55806 14.5581L12.1161 10L7.55806 5.44194C7.31398 5.19786 7.31398 4.80214 7.55806 4.55806Z" fill="currentColor"></path></svg>
