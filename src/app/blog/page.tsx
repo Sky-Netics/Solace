@@ -1,4 +1,5 @@
 import CategoryBox from "../components/CategoryBox/categoryBox"
+import SmallerCarousel from "../components/SmallerCarousel/SmallerCarousel"
 
 const BlogPage = () =>{
     return(
@@ -33,12 +34,32 @@ const BlogPage = () =>{
 
             </div>
 
-            <div className="w-[65%] bg-green-500 h-[650px]">
-                2
+            <div className="w-[65%]   pt-[175px] pr-[100px]">
+
+                <div className="w-full flex justify-between text-[#616161] text-[14px]">
+                    <p>
+                        3 posts
+                    </p>
+
+                    <div>
+                        <label className="mr-5">Sort by:</label>
+
+                        <select className="w-[200px] border text-[#333] px-3 py-4 bg-gray-50">
+                            <option className="text-gray-600 bg-gray-100 py-[100px]" value="Newest">Newest</option>
+                            <option className="text-gray-600 bg-gray-200" value="Oldest">Oldest</option>
+                        </select>
+                    </div>
+                    
+                </div>
+
+                <div className="mt-7">
+                    <SmallerCarousel/>
+                </div>
+
             </div>
             
 
-            </div>
+        </div>
 
     )
 }

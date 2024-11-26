@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { AnimatePresence ,motion } from "framer-motion";
 
 
 type Navs= {
@@ -38,30 +39,50 @@ const Navbar = () => {
         console.log(showResponsiveHeader)
     }
 
+    const menuVariants = {
+        hidden: { opacity: 0, x: "-100%" },
+        visible: { opacity: 1, x: "0%" },
+        exit: { opacity: 0, x: "100%" },
+      };
+
+    
+      const linkVariants = {
+        hidden: { opacity: 0, y: -20 },
+        visible: { opacity: 1, y: 0 },
+      };
+
     return ( 
-        <div className="flex justify-between items-center overflow-x-hidden border-b py-4 px-[87px] max-xl:px-[45px] max-sm:px-0">
+       <div className="fixed top-0 left-0 w-full z-50 bg-white">
+
+        <div className="flex justify-between items-center overflow-x-hidden border-b py-5 px-[87px] max-xl:px-[45px] max-sm:px-0">
 
             <div className="max-[900px]:hidden">
                 <ul className="flex">
                     {
-                        navs.map((item)=>(
-                            <li key={item.title} className="px-2">
+                        navs.map((item, index)=>(
+                            <motion.li
+                                key={item.title}
+                                className="px-2"
+                                variants={linkVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ delay: 0.1 * index, duration: 0.3 }}
+                                >
                                 <Link 
                                     href={item.link} 
                                     className={`inline-block p-2  ${route === item.link ? 'border-b border-black ' : ''}`}>
                                     {item.title}
                                 </Link>
-                            </li>
-                        ))
-                    }
+                                </motion.li>
+                        ))}
                 </ul>
             </div>
 
             <div className="min-[900px]:hidden mr-4 max-sm:ml-4">
 
                 <svg 
-                onClick={showHeaderHandler}
-                width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer">
+                    onClick={showHeaderHandler}
+                    width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer">
                     <title>Bars icon</title>
                     <path fillRule="evenodd" clipRule="evenodd" d="M2.70801 5C2.70801 4.65482 2.98783 4.375 3.33301 4.375H16.6663C17.0115 4.375 17.2913 4.65482 17.2913 5C17.2913 5.34518 17.0115 5.625 16.6663 5.625H3.33301C2.98783 5.625 2.70801 5.34518 2.70801 5ZM2.70801 10C2.70801 9.65482 2.98783 9.375 3.33301 9.375H16.6663C17.0115 9.375 17.2913 9.65482 17.2913 10C17.2913 10.3452 17.0115 10.625 16.6663 10.625H3.33301C2.98783 10.625 2.70801 10.3452 2.70801 10ZM2.70801 15C2.70801 14.6548 2.98783 14.375 3.33301 14.375H16.6663C17.0115 14.375 17.2913 14.6548 17.2913 15C17.2913 15.3452 17.0115 15.625 16.6663 15.625H3.33301C2.98783 15.625 2.70801 15.3452 2.70801 15Z" fill="currentColor"></path>
                 </svg>
@@ -70,14 +91,22 @@ const Navbar = () => {
 
             <div className="min-[900px]:hidden">
 
+            <AnimatePresence>
                 {
                     showResponsiveHeader && (
-                        <div className="w-full h-full fixed left-0 top-0 z-100 bg-white">
-
+                    <motion.div
+                                className="w-full h-full fixed left-0 top-0 z-100 bg-white"
+                                variants={menuVariants}
+                                initial="hidden"
+                                animate="visible"
+                                exit="hidden"
+                                transition={{ duration: 0.3 }}
+                    >
                             <div className="w-full flex justify-between items-center border-b py-5 pl-4 pr-8">
                                 <h1 className="text-[20px]"> Menue </h1>
                             
-                                <div onClick={showHeaderHandler}>
+                                <div
+                                onClick={showHeaderHandler}>
                                     <svg className="cursor-pointer" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5L5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path><path d="M5 5L15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
                                 </div>
                             </div>
@@ -120,9 +149,10 @@ const Navbar = () => {
                                 </ul>
                             </div>
                             
-                        </div>
+                        </motion.div>
                     )
                 }
+                </AnimatePresence>
 
             </div>
 
@@ -138,9 +168,9 @@ const Navbar = () => {
             </div>
 
             <div>
-                <ul className="flex px-5 ml-20">
+                <ul className="flex items-center px-5 ml-20 gap-1">
 
-                    <li className="px-3 py-3 hover:bg-gray-200 ">
+                    <li className="hover:bg-gray-300 rounded-3xl w-[45px] h-[45px] flex justify-center items-center cursor-pointer transition">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <title>Search icon</title>
                             <path fillRule="evenodd" clipRule="evenodd" d="M9.66667 3.125C6.32995 3.125 3.625 5.82995 3.625 9.16667C3.625 12.5034 6.32995 15.2083 9.66667 15.2083C13.0034 15.2083 15.7083 12.5034 15.7083 9.16667C15.7083 5.82995 13.0034 3.125 9.66667 3.125ZM2.375 9.16667C2.375 5.13959 5.63959 1.875 9.66667 1.875C13.6937 1.875 16.9583 5.13959 16.9583 9.16667C16.9583 13.1937 13.6937 16.4583 9.66667 16.4583C5.63959 16.4583 2.375 13.1937 2.375 9.16667Z" fill="currentColor"></path>
@@ -148,7 +178,7 @@ const Navbar = () => {
                         </svg>
                     </li>
 
-                    <li className="px-3 py-3">
+                    <li className="rounded-3xl w-[45px] h-[45px] flex justify-center items-center">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <title>User Icon</title>
                             <path fillRule="evenodd" clipRule="evenodd" d="M10.4997 3.125C8.54367 3.125 6.95801 4.71066 6.95801 6.66667C6.95801 8.62267 8.54367 10.2083 10.4997 10.2083C12.4557 10.2083 14.0413 8.62267 14.0413 6.66667C14.0413 4.71066 12.4557 3.125 10.4997 3.125ZM5.70801 6.66667C5.70801 4.0203 7.85331 1.875 10.4997 1.875C13.146 1.875 15.2913 4.0203 15.2913 6.66667C15.2913 9.31303 13.146 11.4583 10.4997 11.4583C7.85331 11.4583 5.70801 9.31303 5.70801 6.66667Z" fill="currentColor"></path>
@@ -156,7 +186,7 @@ const Navbar = () => {
                         </svg>
                     </li>
 
-                    <li className="px-4 py-4">
+                    <li className="hover:bg-gray-300 rounded-3xl w-[45px] h-[45px] flex justify-center items-center cursor-pointer transition">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <title>Bag icon</title>
                             <path d="M6.6598 18.7083C7.433 18.7083 8.0598 18.0554 8.0598 17.25C8.0598 16.4446 7.433 15.7917 6.6598 15.7917C5.88661 15.7917 5.2598 16.4446 5.2598 17.25C5.2598 18.0554 5.88661 18.7083 6.6598 18.7083Z" fill="currentColor"></path>
@@ -168,6 +198,8 @@ const Navbar = () => {
             </div>
             
         </div>
+
+       </div>
      );
 }
  
