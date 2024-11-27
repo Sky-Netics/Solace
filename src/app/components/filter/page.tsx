@@ -212,7 +212,7 @@ const Filter = () => {
                         <FiChevronDown />
                     </div>
                     <div className="w-full h-2"></div>
-                    <div className="absolute hidden z-10 w-full border bg-background text-foreground px-4 py-2 space-y-1">
+                    <div className="absolute hidden z-10 w-full border border-lightDark bg-background text-foreground px-4 py-2 space-y-1">
                         <p>Ashton</p>
                         <p>Savannah</p>
                         <p>Winsdor</p>
@@ -224,7 +224,7 @@ const Filter = () => {
                         <FiChevronDown />
                     </div>
                     <div className="w-full h-2"></div>
-                    <div className="absolute hidden z-10 w-full border bg-background text-foreground px-4 py-2 space-y-1">
+                    <div className="absolute hidden z-10 w-full border border-lightDark bg-background text-foreground px-4 py-2 space-y-1">
                         <p>Barstools</p>
                         <p>Benches</p>
                         <p>DiningChairs</p>
@@ -239,7 +239,7 @@ const Filter = () => {
                         <FiChevronDown />
                     </div>
                     <div className="w-full h-2"></div>
-                    <div className="absolute hidden z-10 w-full border bg-background text-foreground px-4 py-2 space-y-1">
+                    <div className="absolute hidden z-10 w-full border border-lightDark bg-background text-foreground px-4 py-2 space-y-1">
                         <p>Leather</p>
                         <p>Wood</p>
                     </div>
@@ -250,7 +250,7 @@ const Filter = () => {
                         <FiChevronDown />
                     </div>
                     <div className="w-full h-2"></div>
-                    <div className="absolute hidden z-10 w-full border bg-background text-foreground px-4 py-2 space-y-1">
+                    <div className="absolute hidden z-10 w-full border border-lightDark bg-background text-foreground px-4 py-2 space-y-1">
                         <p>Under $100</p>
                         <p>$100-$500</p>
                         <p>$501-$1000</p>
@@ -266,7 +266,7 @@ const Filter = () => {
                         <FiChevronDown />
                     </div>
                     <div className="w-full h-2"></div>
-                    <div className="absolute hidden z-10 w-full border bg-background text-foreground px-4 py-2 space-y-1">
+                    <div className="absolute hidden z-10 w-full border border-lightDark bg-background text-foreground px-4 py-2 space-y-1">
                         <p>Ashton</p>
                         <p>Savannah</p>
                         <p>Winsdor</p>

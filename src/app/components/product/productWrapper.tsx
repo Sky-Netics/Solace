@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
 import { IoCartOutline } from "react-icons/io5";
 import Filter from "../filter/page";
+import shopType from "@/app/interFaces/shopType";
 
 const fetchData = async (url:string)=>{
     const response = await fetch(url,{
@@ -16,7 +17,7 @@ const fetchData = async (url:string)=>{
 }
 
 
-const ProductWrapper = async ({url, topic ,path}:{url:string, topic:string, path:string}) => {
+const ProductWrapper = async ({url,topic,path}:{url:string,topic:string,path:string}) => {
     const products:ProductType[] = await fetchData(url);
     const productlength = products.length
     
