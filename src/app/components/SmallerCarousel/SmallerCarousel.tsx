@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import Image from "next/image";
@@ -50,21 +51,27 @@ const SmallerCarousel = () => {
   }, []);
 
   const carouselItems = items.map((item, index) => (
-    <>
-      <div key={index} className="flex flex-col items-start px-1 rounded-lg">
-        <Image
-          src={item.image}
-          alt={item.title}
-          className="w-full h-[280px] object-cover"
-        />
-        <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
-        <p className="mt-2 text-gray-600 text-sm">{item.description}</p>
-      </div>
-    </>
+    <div  key={index}>
+        <div className="flex flex-col items-start px-1 rounded-lg">
+        <Link href={`/blog/${item.title.replaceAll(' ', '-')}`} className="w-full h-[280px]">
+          <Image
+            src={item.image}
+            alt={item.title}
+            className="w-full h-[280px] object-cover"
+          />
+          </Link>
+          <Link href={`/blog/${item.title.replaceAll(' ', '-')}`}>
+            <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
+          </Link>
+          <p className="mt-2 text-gray-600 text-sm">{item.description}</p>
+        </div>
+        
+    </div>
   ));
 
   return (
     <div className="flex flex-col items-center">
+    
     <AliceCarousel
       ref={carouselRef}
       items={carouselItems}
@@ -76,7 +83,7 @@ const SmallerCarousel = () => {
       disableButtonsControls={true}
     />
 
-<div className="flex mx-auto gap-1 mt-[70px] items-center">
+    <div className="flex mx-auto gap-1 mt-[70px] items-center">
       
       <div
         className="mx-1 cursor-pointer"

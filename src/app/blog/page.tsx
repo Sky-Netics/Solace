@@ -1,16 +1,20 @@
+import Link from "next/link"
 import CategoryBox from "../components/CategoryBox/categoryBox"
 import SmallerCarousel from "../components/SmallerCarousel/SmallerCarousel"
+import CarouselComponent from "../components/CarouselComponent/CarouselComponent"
+
 
 const BlogPage = () =>{
     return(
+        <div className="flex flex-col bg-gray-50">
+
         <div className="flex">
-            
-            
+                
             <div className="w-[35%]">
 
                 <div className="px-[100px] mb-8 mt-8">
                     <div className="mb-3 flex">
-                        <p className="mr-2">Home page</p>
+                        <Link href={'/'} className="mr-2">Home page</Link>
                         <p>/</p>
                         <p className="ml-2 text-[#656464]">Blog</p>
                     </div>
@@ -58,6 +62,12 @@ const BlogPage = () =>{
 
             </div>
             
+
+        </div>
+
+        <div className="mt-[150px]">
+            <CarouselComponent title="Recommended products"/>
+        </div>
 
         </div>
 
