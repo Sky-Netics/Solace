@@ -180,22 +180,22 @@ const Filter = () => {
                     </div>
                 </div>
                 <div className="w-full px-3 flex justify-between gap-3 pt-4">
-                    <div onClick={clearFilter} className="py-3 px-7 rounded-2xl bg-lightDark text-lightLight">Clear Filters</div>
+                    <div onClick={clearFilter} className="py-3 px-7 rounded-2xl bg-background text-foreground text-lightLight">Clear Filters</div>
                     <div className="py-3 px-7 rounded-2xl bg-white text-black">View Products</div>
                 </div>
             </div>
             <div className="w-full flex gap-3 my-5">
-                <div onClick={openFilter} className="bg-lightDark w-full flex gap-2 justify-center items-center py-3 rounded-3xl">
+                <div onClick={openFilter} className="bg-background text-foreground w-full flex gap-2 justify-center items-center py-3 rounded-3xl">
                     <div><IoFilterSharp /></div>
                     <p>Filters</p>
                 </div>
                 <div onMouseEnter={e=>openFilterDropDown(e)} onMouseLeave={e=>closeFilterDropDown(e)} className="relative w-full">
-                    <div className="bg-lightDark w-full flex gap-2 justify-center items-center py-3 rounded-3xl">
+                    <div className="bg-background text-foreground w-full flex gap-2 justify-center items-center py-3 rounded-3xl">
                         <div><svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Sort icon</title><path fillRule="evenodd" clipRule="evenodd" d="M5.64139 2.89155C5.88547 2.64748 6.2812 2.64748 6.52528 2.89155L9.85861 6.22489C10.1027 6.46897 10.1027 6.86469 9.85861 7.10877C9.61453 7.35285 9.2188 7.35285 8.97472 7.10877L6.70833 4.84238V16.6668C6.70833 17.012 6.42851 17.2918 6.08333 17.2918C5.73816 17.2918 5.45833 17.012 5.45833 16.6668V4.84238L3.19194 7.10877C2.94786 7.35285 2.55214 7.35285 2.30806 7.10877C2.06398 6.86469 2.06398 6.46897 2.30806 6.22489L5.64139 2.89155ZM14.4167 2.7085C14.7618 2.7085 15.0417 2.98832 15.0417 3.3335V15.1579L17.3081 12.8916C17.5521 12.6475 17.9479 12.6475 18.1919 12.8916C18.436 13.1356 18.436 13.5314 18.1919 13.7754L14.8586 17.1088C14.6145 17.3528 14.2188 17.3528 13.9747 17.1088L10.6414 13.7754C10.3973 13.5314 10.3973 13.1356 10.6414 12.8916C10.8855 12.6475 11.2812 12.6475 11.5253 12.8916L13.7917 15.1579V3.3335C13.7917 2.98832 14.0715 2.7085 14.4167 2.7085Z" fill="currentColor"></path></svg></div>
                         <p>Sort</p>
                     </div>
                     <div className="w-full h-2"></div>
-                    <div className="absolute hidden -left-14 border z-10 w-52 space-y-3 bg-lightDark py-4 px-8">
+                    <div className="absolute hidden -left-14 border z-10 w-52 space-y-3 bg-background text-foreground py-4 px-8">
                         <p>Relevance</p>
                         <p>New in</p>
                         <p>Price: Low-High</p>
@@ -207,24 +207,24 @@ const Filter = () => {
         <div className="hidden sm:flex flex-col lg:flex-row lg:justify-between gap-2 my-3">
             <div className="flex gap-x-2">
                 <div onMouseEnter={e=>openFilterDropDown(e)} onMouseLeave={closeFilterDropDown} className="relative">
-                    <div className="flex bg-lightDark border-lightLight border gap-6 items-center p-3">
+                    <div className="flex bg-background text-foreground border-lightLight border gap-6 items-center p-3">
                         <p>Collections</p>
                         <FiChevronDown />
                     </div>
                     <div className="w-full h-2"></div>
-                    <div className="absolute hidden z-10 w-full border bg-lightDark px-4 py-2 space-y-1">
+                    <div className="absolute hidden z-10 w-full border bg-background text-foreground px-4 py-2 space-y-1">
                         <p>Ashton</p>
                         <p>Savannah</p>
                         <p>Winsdor</p>
                     </div>
                 </div>
                 <div onMouseEnter={e=>openFilterDropDown(e)} onMouseLeave={closeFilterDropDown} className="relative">
-                    <div className="flex bg-lightDark border-lightLight border gap-6 items-center p-3">
+                    <div className="flex bg-background text-foreground border-lightLight border gap-6 items-center p-3">
                         <p>Product Type</p>
                         <FiChevronDown />
                     </div>
                     <div className="w-full h-2"></div>
-                    <div className="absolute hidden z-10 w-full border bg-lightDark px-4 py-2 space-y-1">
+                    <div className="absolute hidden z-10 w-full border bg-background text-foreground px-4 py-2 space-y-1">
                         <p>Barstools</p>
                         <p>Benches</p>
                         <p>DiningChairs</p>
@@ -234,23 +234,23 @@ const Filter = () => {
                     </div>
                 </div>
                 <div onMouseEnter={e=>openFilterDropDown(e)} onMouseLeave={closeFilterDropDown} className="relative">
-                    <div className="flex bg-lightDark border-lightLight border gap-6 items-center p-3">
+                    <div className="flex bg-background text-foreground border-lightLight border gap-6 items-center p-3">
                         <p>Material</p>
                         <FiChevronDown />
                     </div>
                     <div className="w-full h-2"></div>
-                    <div className="absolute hidden z-10 w-full border bg-lightDark px-4 py-2 space-y-1">
+                    <div className="absolute hidden z-10 w-full border bg-background text-foreground px-4 py-2 space-y-1">
                         <p>Leather</p>
                         <p>Wood</p>
                     </div>
                 </div>
                 <div onMouseEnter={e=>openFilterDropDown(e)} onMouseLeave={closeFilterDropDown} className="relative">
-                    <div className="flex bg-lightDark border-lightLight border gap-10 items-center p-3">
+                    <div className="flex bg-background text-foreground border-lightLight border gap-10 items-center p-3">
                         <p>Price</p>
                         <FiChevronDown />
                     </div>
                     <div className="w-full h-2"></div>
-                    <div className="absolute hidden z-10 w-full border bg-lightDark px-4 py-2 space-y-1">
+                    <div className="absolute hidden z-10 w-full border bg-background text-foreground px-4 py-2 space-y-1">
                         <p>Under $100</p>
                         <p>$100-$500</p>
                         <p>$501-$1000</p>
@@ -261,12 +261,12 @@ const Filter = () => {
             <div className="flex items-center gap-2">
                 <p className="text-lightLight">Sort by:</p>
                 <div onMouseEnter={e=>openFilterDropDown(e)} onMouseLeave={closeFilterDropDown} className="relative">
-                    <div className="flex bg-lightDark border-lightLight border gap-6 items-center p-3">
+                    <div className="flex bg-background text-foreground border-lightLight border gap-6 items-center p-3">
                         <p>Relevance</p>
                         <FiChevronDown />
                     </div>
                     <div className="w-full h-2"></div>
-                    <div className="absolute hidden z-10 w-full border bg-lightDark px-4 py-2 space-y-1">
+                    <div className="absolute hidden z-10 w-full border bg-background text-foreground px-4 py-2 space-y-1">
                         <p>Ashton</p>
                         <p>Savannah</p>
                         <p>Winsdor</p>

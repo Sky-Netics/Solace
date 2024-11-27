@@ -9,7 +9,7 @@ const Cart = () => {
     const [empty,setEmpty] = useState(false);
 
     return ( 
-        <div className="bg-lightDark">
+        <div className="bg-background">
             {
             empty ? <CartEmpty />
             : <CartItem />
