@@ -50,11 +50,11 @@ const Footer = () => {
                             <p>Categories</p>
                             <div className="sm:hidden"><IoIosArrowDown className="transition-all" /></div>
                         </div>
-                        <div className="py-2 opacity-0 sm:opacity-20 text-sm px-1 transition-all duration-500 space-y-1">
-                            <Link href={"/"}>Beds</Link>
-                            <p>Chairs</p>
-                            <p>Sofas</p>
-                            <p>Tables</p>
+                        <div className="py-2 opacity-0 sm:opacity-100 text-sm px-1 transition-all duration-500 space-y-1">
+                            <Link className="text-lightLight cursor-pointer hover:text-white" href={"/"}>Beds</Link>
+                            <p className="text-lightLight cursor-pointer hover:text-white">Chairs</p>
+                            <p className="text-lightLight cursor-pointer hover:text-white">Sofas</p>
+                            <p className="text-lightLight cursor-pointer hover:text-white">Tables</p>
                         </div>
                     </div>
                     <div ref={order} className="h-8 sm:h-32 overflow-hidden transition-all duration-500" onClick={e=>openFooter(e)}>
@@ -62,10 +62,10 @@ const Footer = () => {
                             <p>Orders</p>
                             <div className="sm:hidden"><IoIosArrowDown className="transition-all"/></div>
                         </div>
-                        <div className="py-2 opacity-0 sm:opacity-20 text-sm px-1 transition-all duration-500 space-y-2">
-                            <p>Orders and delivery</p>
-                            <p>Returns and refunds</p>
-                            <p>Payment and pricing</p>
+                        <div className="py-2 opacity-0 sm:opacity-100 text-sm px-1 transition-all duration-500 space-y-2">
+                            <p className="text-lightLight cursor-pointer hover:text-white">Orders and delivery</p>
+                            <p className="text-lightLight cursor-pointer hover:text-white">Returns and refunds</p>
+                            <p className="text-lightLight cursor-pointer hover:text-white">Payment and pricing</p>
                         </div>
                     </div>
                     <div ref={about} className="h-8 sm:h-32 overflow-hidden transition-all duration-500" onClick={e=>openFooter(e)}>
@@ -73,10 +73,10 @@ const Footer = () => {
                             <p>About</p>
                             <div className="sm:hidden"><IoIosArrowDown className="transition-all"/></div>
                         </div>
-                        <div className="py-2 opacity-0 sm:opacity-20 text-sm px-1 transition-all duration-500 space-y-2">
-                            <p>About us</p>
-                            <p>Blog</p>
-                            <p>Careers</p>
+                        <div className="py-2 opacity-0 sm:opacity-100 text-sm px-1 transition-all duration-500 space-y-2">
+                            <p className="text-lightLight cursor-pointer hover:text-white">About us</p>
+                            <p className="text-lightLight cursor-pointer hover:text-white">Blog</p>
+                            <p className="text-lightLight cursor-pointer hover:text-white">Careers</p>
                         </div>
                     </div>
                     <div ref={help} className="h-8 sm:h-32 overflow-hidden transition-all duration-500" onClick={e=>openFooter(e)}>
@@ -84,10 +84,10 @@ const Footer = () => {
                             <p>Need help?</p>
                             <div className="sm:hidden"><IoIosArrowDown className="transition-all"/></div>
                         </div>
-                        <div className="py-2 opacity-0 sm:opacity-20 text-sm px-1 transition-all duration-500 space-y-2">
-                            <p>FAQs</p>
-                            <p>Support center</p>
-                            <p>Contact us</p>
+                        <div className="py-2 opacity-0 sm:opacity-100 text-sm px-1 transition-all duration-500 space-y-2">
+                            <p className="text-lightLight cursor-pointer hover:text-white">FAQs</p>
+                            <p className="text-lightLight cursor-pointer hover:text-white">Support center</p>
+                            <p className="text-lightLight cursor-pointer hover:text-white">Contact us</p>
                         </div>
                     </div>
                 </div>
