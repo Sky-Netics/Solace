@@ -21,7 +21,7 @@ const fetchData = async (url:string)=>{
 // {"1":{"q":2},"2":{"q":1}}
 
 const ProductWrapper = async ({url,topic,path}:{url:string,topic:string,path:string}) => {
-    const products:ProductType[] = await fetchData(url);
+    const products:shopType[] = await fetchData(url);
     const productlength = products.length
     
     return ( 

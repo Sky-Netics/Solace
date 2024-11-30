@@ -28,12 +28,12 @@ const Login = () => {
             <div className="space-y-4">
                 <div>
                     <label className="text-lightLight" htmlFor="Email">Email</label>
-                    <input className="h-12 w-full border focus:outline-none px-3" type="email" name="Email" id="Email" />
+                    <input className="h-12 w-full border focus:outline-none px-3 bg-transparent" type="email" name="Email" id="Email" />
                 </div>
                 <div>
                     <label className="text-lightLight" htmlFor="Password">Password</label>
                     <div className="h-12 w-full flex border items-center px-3">
-                        <input ref={passwordInput} className="w-full focus:outline-none" type="password" name="Password" id="Password" />
+                        <input ref={passwordInput} className="w-full focus:outline-none bg-background" type="password" name="Password" id="Password" />
                         {show ?
                         <svg onClick={togglePassword} width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" clipRule="evenodd" d="M10.4998 4.79224C8.84942 4.79224 7.23623 5.28227 5.86471 6.20021C4.49727 7.11542 3.43147 8.41491 2.80151 9.93475C2.78752 9.97716 2.78752 10.023 2.80151 10.0654C3.43147 11.5852 4.49727 12.8847 5.86471 13.7999C7.23623 14.7178 8.84942 15.2079 10.4998 15.2079C12.1501 15.2079 13.7633 14.7178 15.1348 13.7999C16.5023 12.8847 17.5681 11.5852 18.198 10.0654C18.212 10.023 18.212 9.97716 18.198 9.93474C17.5681 8.4149 16.5023 7.11542 15.1348 6.20021C13.7633 5.28227 12.1501 4.79224 10.4998 4.79224ZM5.16945 5.1614C6.74669 4.10577 8.60186 3.54224 10.4998 3.54224C12.3977 3.54224 14.2528 4.10577 15.8301 5.1614C17.4073 6.21703 18.6356 7.71722 19.3592 9.47176C19.3621 9.47865 19.3648 9.48558 19.3674 9.49256C19.4889 9.81997 19.4889 10.1801 19.3674 10.5076C19.3648 10.5145 19.3621 10.5215 19.3592 10.5283C18.6356 12.2829 17.4073 13.7831 15.8301 14.8387C14.2528 15.8943 12.3977 16.4579 10.4998 16.4579C8.60186 16.4579 6.74669 15.8943 5.16945 14.8387C3.59221 13.7831 2.36392 12.2829 1.64031 10.5283C1.63747 10.5215 1.63476 10.5145 1.63217 10.5076C1.51063 10.1801 1.51063 9.81997 1.63217 9.49256C1.63476 9.48558 1.63747 9.47865 1.64031 9.47176C2.36392 7.71722 3.59221 6.21703 5.16945 5.1614Z" fill="currentColor"></path>

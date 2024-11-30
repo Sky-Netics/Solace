@@ -1,11 +1,16 @@
 "use client"
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Login from "../components/account/login/login";
 import Register from "../components/account/register/register";
 
 const Account = () => {
     const [page,setPage] = useState("login");
     const [components,setComponents] = useState(<Login />);
+
+    useEffect(()=>{
+        if (window.location.search==="?signup")
+            setComponents(<Register />)
+    },[])
 
     const toggleRegister = ()=>{
         setPage("register")

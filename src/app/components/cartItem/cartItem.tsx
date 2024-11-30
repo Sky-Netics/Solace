@@ -70,7 +70,7 @@ const CartItem:React.FC<CartItemProps> = ({products,setProducts}) => {
                                             <div>
                                                 <p>€ {product.price}</p>
                                                 <div className="border w-24 my-2 p-2">
-                                                    <select className="w-full mx-auto" value={product.quantity} onChange={e=>handleChange(e,i)}>
+                                                    <select className="w-full mx-auto bg-background focus:outline-none" value={product.quantity} onChange={e=>handleChange(e,i)}>
                                                         <option value={1}>1</option>
                                                         <option value={2}>2</option>
                                                         <option value={3}>3</option>

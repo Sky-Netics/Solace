@@ -33,31 +33,31 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <div className="layout bg-lightDark">
+            <div className="layout dark:bg-lightDark">
                 <p className="text-3xl mb-12">Why us?</p>
                 <div className="space-y-4 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-4 lg:grid-cols-4">
-                    <div className="bg-lightDarkTransparent p-6">
+                    <div className="dark:bg-lightDarkTransparent bg-gray-100 p-6">
                         <div><Image className="w-12 h-12 rounded-full object-cover" src="/assets/Ellipse1.png" alt="user1" width={80} height={80}/></div>
                         <div className="mt-3">
                             <p>Exceptional quality</p>
                             <p className="text-lightLight">We deliver exceptional quality in every piece. Our meticulous craftsmanship and premium materials ensure durability and elegance.</p>
                         </div>
                     </div>
-                    <div className="bg-lightDarkTransparent p-6">
+                    <div className="dark:bg-lightDarkTransparent bg-gray-100 p-6">
                         <div><Image className="w-12 h-12 rounded-full object-cover" src="/assets/Ellipse2.png" alt="user2" width={80} height={80}/></div>
                         <div className="mt-3">
                             <p>Timeless design</p>
                             <p className="text-lightLight">Our furniture blends classic and contemporary styles, offering timeless pieces that enhance your home’s aesthetic for years to come.</p>
                         </div>
                     </div>
-                    <div className="bg-lightDarkTransparent p-6">
+                    <div className="dark:bg-lightDarkTransparent bg-gray-100 p-6">
                         <div><Image className="w-12 h-12 rounded-full object-cover" src="/assets/Ellipse3.png" alt="user3" width={80} height={80}/></div>
                         <div className="mt-3">
                             <p>Sustainable practices</p>
                             <p className="text-lightLight">We are dedicated to sustainable practices, using ethically sourced materials and eco-friendly processes, making a responsible choice for your home and the environment.</p>
                         </div>
                     </div>
-                    <div className="bg-lightDarkTransparent p-6">
+                    <div className="dark:bg-lightDarkTransparent bg-gray-100 p-6">
                         <div><Image className="w-12 h-12 rounded-full object-cover" src="/assets/Ellipse4.png" alt="user4" width={80} height={80}/></div>
                         <div className="mt-3">
                             <p>Tailored solutions</p>
@@ -81,7 +81,7 @@ const About = () => {
                     <Image className="w-full h-60 object-cover sm:h-[400px] md:min-w-[400px]" src="/assets/two_white_chair.webp" alt="two-chair" width={600} height={200}/>
                 </div>
             </div>
-            <div className="layout bg-lightDark">
+            <div className="layout dark:bg-lightDark">
                 <div className="text-center my-8 space-y-8 sm:space-y-0 sm:flex sm:justify-around">
                     <div>
                         <p className="text-4xl md:text-5xl">10+</p>
