@@ -14,7 +14,8 @@ const Navbar = () => {
     const route = usePathname()
     const [showResponsiveHeader, setShowResponsiveHeader] = useState<boolean>(false)
     const [isShopListOpen, setIsShopListOpen] = useState(false)
-    
+    const [isVisible,setIsVisible] = useState(false);
+
     const navUser = useRef<HTMLDivElement|null>(null);
 
     const showHeaderHandler = ()=>{
@@ -40,6 +41,15 @@ const Navbar = () => {
         navUser.current?.classList.add("hidden")
     }
 
+    const handleMouseEnter = ()=>{
+
+    }
+    const handleMouseLeave = ()=>{
+
+    }
+    const handleClick = ()=>{
+        
+    }
 
     const openShopList = () => setIsShopListOpen(true);
     const closeShopList = () => setIsShopListOpen(false);
@@ -221,8 +231,6 @@ const Navbar = () => {
                     </li>
 
                     <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} className="rounded-3xl mx-2 flex justify-center items-center relative z-10">
-                    <li onMouseEnter={openNavUser} onMouseLeave={closeNavUser} className="rounded-3xl mx-2 flex justify-center items-center relative z-10">
-                        
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <title>User Icon</title>
                             <path fillRule="evenodd" clipRule="evenodd" d="M10.4997 3.125C8.54367 3.125 6.95801 4.71066 6.95801 6.66667C6.95801 8.62267 8.54367 10.2083 10.4997 10.2083C12.4557 10.2083 14.0413 8.62267 14.0413 6.66667C14.0413 4.71066 12.4557 3.125 10.4997 3.125ZM5.70801 6.66667C5.70801 4.0203 7.85331 1.875 10.4997 1.875C13.146 1.875 15.2913 4.0203 15.2913 6.66667C15.2913 9.31303 13.146 11.4583 10.4997 11.4583C7.85331 11.4583 5.70801 9.31303 5.70801 6.66667Z" fill="currentColor"></path>
@@ -230,10 +238,10 @@ const Navbar = () => {
                         </svg>
                         {isVisible ?
                         <div className="absolute w-72 -right-8 top-10">
-                        
                         <div ref={navUser} className="absolute w-72 -right-8 top-10 hidden">
                             <div className="w-20 right-0 h-5 absolute -top-5"></div>
                             <NavUser />
+                        </div>
                         </div>
                         : <></>}
                     </li>
