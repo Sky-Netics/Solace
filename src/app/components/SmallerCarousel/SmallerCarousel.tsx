@@ -76,8 +76,8 @@ const SmallerCarousel = () => {
       ref={carouselRef}
       items={carouselItems}
       responsive={{
-        0: { items: 1 },
-        768: { items: 2 },
+        768: { items: 1 },
+        950: {items: 2}
       }}
       disableDotsControls={true}
       disableButtonsControls={true}

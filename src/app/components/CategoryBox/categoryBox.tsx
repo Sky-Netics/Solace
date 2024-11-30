@@ -68,6 +68,7 @@ const CategoryBox = () => {
                         id="all-posts"
                         name="category"
                         value="All-posts"
+                        defaultChecked 
                         className="mr-3 cursor-pointer w-4 h-4 accent-black"
                     />
                     <label className="cursor-pointer" htmlFor="all-posts">
