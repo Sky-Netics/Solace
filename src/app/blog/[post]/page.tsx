@@ -11,7 +11,7 @@ const BlogPost = () =>{
 
 
     return(
-        <div className="flex flex-col px-[100px] py-10">
+        <div className="flex flex-col px-[100px] py-10 max-md:px-5">
             
             <div>
                 <div className="mb-3 flex">
@@ -24,7 +24,7 @@ const BlogPost = () =>{
                     <p className="text-[#656464] ml-2">{post}</p>
                 </div>
 
-                <h1 className="text-[46px]">{post}</h1>
+                <h1 className="text-[46px] max-lg:text-[32px]">{post}</h1>
 
                 <div className="mt-8">
                     <Image src={TestImage} alt="something" className="object-cover h-[400px]" />
