@@ -5,36 +5,17 @@ import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 import { AnimatePresence ,motion } from "framer-motion";
 import NavUser from "../navUser/navUser";
-import NavSearch from "../navSearch/navSearch";
+import ShopList from "../ShopList/shopList";
+import CollectionList from "../CollectionList/collectionList";
 
-
-type Navs= {
-    title: string,
-    link: string
-}
 
 const Navbar = () => {
 
     const route = usePathname()
     const [showResponsiveHeader, setShowResponsiveHeader] = useState<boolean>(false)
-    const [isVisible,setVisible] = useState(false);
+    const [isShopListOpen, setIsShopListOpen] = useState(false)
     
-    const navs:Navs[] = [
-        {
-            title: 'Shop',
-            link: '/shop'
-        },
-        {
-            title: 'Collections',
-            link: '/collections'
-        },
-        {
-            title: 'About Us',
-            link: '/about'
-        },
-
-    ]
-
+    const navUser = useRef<HTMLDivElement|null>(null);
 
     const showHeaderHandler = ()=>{
         setShowResponsiveHeader((prev)=> !prev)
@@ -52,50 +33,77 @@ const Navbar = () => {
       visible: { opacity: 1, y: 0 },
     };
 
-    const handleMouseEnter = () => { setVisible(true) }; 
-    const handleMouseLeave = () => { setVisible(false) }; 
-    const handleClick = () => { setVisible(!isVisible) };
+    const openNavUser = ()=>{
+        navUser.current?.classList.remove("hidden")
+    }
+    const closeNavUser = ()=>{
+        navUser.current?.classList.add("hidden")
+    }
+
+
+    const openShopList = () => setIsShopListOpen(true);
+    const closeShopList = () => setIsShopListOpen(false);
 
     return ( 
-       <div className="fixed top-0 left-0 w-full z-50 bg-white">
+       <div className="fixed top-0 left-0 w-full z-50 bg-background">
 
-        <div className="flex justify-between items-center border-b py-5 px-[87px] max-xl:px-[45px] max-sm:px-0">
+        <div className="flex justify-between items-center border-b  px-[87px] max-xl:px-[45px] max-sm:px-0">
 
             <div className="max-[900px]:hidden">
-                <ul className="flex">
+                    <ul className="flex h-full ">
                             <motion.li
                                 key={'shop'}
-                                className="px-2"
+                                className="px-2 py-5"
                                 variants={linkVariants}
                                 initial="hidden"
                                 animate="visible"
                                 transition={{ delay: 0.1 * 1, duration: 0.3 }}
+                                onMouseEnter={openShopList} 
+                                onMouseLeave={closeShopList}
                                 >
                                 <Link 
+                                    
                                     href={'/shop'} 
-                                    className={`inline-block p-2  ${route === '/shop' ? 'border-b border-black ' : ''}`}>
+                                    className={`inline-block p-2  ${route === '/shop' ? 'border-b border-black dark:border-white' : ''}`}>
                                     Shop
                                 </Link>
+
+                                <AnimatePresence>
+                                    {isShopListOpen && (
+                                        <motion.div 
+                                            initial="hidden"
+                                            animate="visible"
+                                            transition={{ delay: 0.1 * 1, duration: 0.4 }}
+                                            variants={linkVariants}
+                                            exit="hidden"
+                                            className="absolute w-full top-[80px] left-0">
+                                            <div className="w-full h-5 absolute"></div>
+                                            <ShopList />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                                
+                                
                                 </motion.li>
 
                                 <motion.li
                                 key={'collections'}
-                                className="px-2"
+                                className="px-2 py-5"
                                 variants={linkVariants}
                                 initial="hidden"
                                 animate="visible"
                                 transition={{ delay: 0.1 * 1 , duration: 0.3 }}
                                 >
                                 <Link 
-                                    href={'/collections'} 
-                                    className={`inline-block p-2  ${route === '/collections' ? 'border-b border-black ' : ''}`}>
+                                    href={'/shop'} 
+                                    className={`inline-block p-2  ${route === '/collections' ? 'border-b border-black dark:border-white' : ''}`}>
                                     Collections
                                 </Link>
                                 </motion.li>
 
                                 <motion.li
                                 key={'about-us'}
-                                className="px-2"
+                                className="px-2 py-5"
                                 variants={linkVariants}
                                 initial="hidden"
                                 animate="visible"
@@ -103,9 +111,10 @@ const Navbar = () => {
                                 >
                                 <Link 
                                     href={'/about'} 
-                                    className={`inline-block p-2  ${route === '/about' ? 'border-b border-black ' : ''}`}>
+                                    className={`inline-block p-2  ${route === '/about' ? 'border-b border-black dark:border-white' : ''}`}>
                                     About Us
                                 </Link>
+
                                 </motion.li>
                         
                 </ul>
@@ -128,7 +137,7 @@ const Navbar = () => {
                 {
                     showResponsiveHeader && (
                     <motion.div
-                                className="w-full h-full fixed left-0 top-0 z-50 bg-white"
+                                className="w-full h-full fixed left-0 top-0 z-50 bg-background"
                                 variants={menuVariants}
                                 initial="hidden"
                                 animate="visible"
@@ -145,22 +154,22 @@ const Navbar = () => {
                             </div>
 
                             <div className="border-b pt-5 pl-4">
-                                <button className="bg-gray-200 py-2 px-4 text-[14px] rounded-3xl">Shop all</button>
+                                <button className="bg-gray-200 py-2 px-4 text-[14px] rounded-3xl dark:text-[#333]">Shop all</button>
 
                                 <ul className="pr-5 mt-4">
-                                    <li className="flex justify-between items-center px-4 hover:bg-gray-100 cursor-pointer transition py-3 rounded-xl">
+                                    <li className="flex justify-between items-center px-4 hover:bg-gray-100 hover:dark:text-[#333] cursor-pointer transition py-3 rounded-xl">
                                         Beds
                                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"><title>Chevron right icon</title><path fillRule="evenodd" clipRule="evenodd" d="M7.55806 4.55806C7.80214 4.31398 8.19786 4.31398 8.44194 4.55806L13.4419 9.55806C13.686 9.80214 13.686 10.1979 13.4419 10.4419L8.44194 15.4419C8.19786 15.686 7.80214 15.686 7.55806 15.4419C7.31398 15.1979 7.31398 14.8021 7.55806 14.5581L12.1161 10L7.55806 5.44194C7.31398 5.19786 7.31398 4.80214 7.55806 4.55806Z" fill="currentColor"></path></svg>
                                     </li>
-                                    <li className="flex justify-between items-center px-4 hover:bg-gray-100 cursor-pointer transition py-3 rounded-xl">
+                                    <li className="flex justify-between items-center px-4 hover:bg-gray-100 hover:dark:text-[#333] cursor-pointer transition py-3 rounded-xl">
                                         Chairs
                                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"><title>Chevron right icon</title><path fillRule="evenodd" clipRule="evenodd" d="M7.55806 4.55806C7.80214 4.31398 8.19786 4.31398 8.44194 4.55806L13.4419 9.55806C13.686 9.80214 13.686 10.1979 13.4419 10.4419L8.44194 15.4419C8.19786 15.686 7.80214 15.686 7.55806 15.4419C7.31398 15.1979 7.31398 14.8021 7.55806 14.5581L12.1161 10L7.55806 5.44194C7.31398 5.19786 7.31398 4.80214 7.55806 4.55806Z" fill="currentColor"></path></svg>
                                     </li>
-                                    <li className="flex justify-between items-center px-4 hover:bg-gray-100 cursor-pointer transition py-3 rounded-xl">
+                                    <li className="flex justify-between items-center px-4 hover:bg-gray-100 hover:dark:text-[#333] cursor-pointer transition py-3 rounded-xl">
                                         Sofas
                                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"><title>Chevron right icon</title><path fillRule="evenodd" clipRule="evenodd" d="M7.55806 4.55806C7.80214 4.31398 8.19786 4.31398 8.44194 4.55806L13.4419 9.55806C13.686 9.80214 13.686 10.1979 13.4419 10.4419L8.44194 15.4419C8.19786 15.686 7.80214 15.686 7.55806 15.4419C7.31398 15.1979 7.31398 14.8021 7.55806 14.5581L12.1161 10L7.55806 5.44194C7.31398 5.19786 7.31398 4.80214 7.55806 4.55806Z" fill="currentColor"></path></svg>
                                     </li>
-                                    <li className="flex justify-between items-center px-4 hover:bg-gray-100 cursor-pointer transition py-3 rounded-xl">
+                                    <li className="flex justify-between items-center px-4 mb-2 hover:bg-gray-100 hover:dark:text-[#333] cursor-pointer transition py-3 rounded-xl">
                                         Tables
                                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"><title>Chevron right icon</title><path fillRule="evenodd" clipRule="evenodd" d="M7.55806 4.55806C7.80214 4.31398 8.19786 4.31398 8.44194 4.55806L13.4419 9.55806C13.686 9.80214 13.686 10.1979 13.4419 10.4419L8.44194 15.4419C8.19786 15.686 7.80214 15.686 7.55806 15.4419C7.31398 15.1979 7.31398 14.8021 7.55806 14.5581L12.1161 10L7.55806 5.44194C7.31398 5.19786 7.31398 4.80214 7.55806 4.55806Z" fill="currentColor"></path></svg>
                                     </li>
@@ -175,7 +184,7 @@ const Navbar = () => {
                                         </Link>
                                     </li>
                                     <li className="px-4 py-3">
-                                        <Link href={'./about-us'}>
+                                        <Link href={'/about'}>
                                             About Us
                                         </Link>
                                     </li>
@@ -212,6 +221,8 @@ const Navbar = () => {
                     </li>
 
                     <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} className="rounded-3xl mx-2 flex justify-center items-center relative z-10">
+                    <li onMouseEnter={openNavUser} onMouseLeave={closeNavUser} className="rounded-3xl mx-2 flex justify-center items-center relative z-10">
+                        
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <title>User Icon</title>
                             <path fillRule="evenodd" clipRule="evenodd" d="M10.4997 3.125C8.54367 3.125 6.95801 4.71066 6.95801 6.66667C6.95801 8.62267 8.54367 10.2083 10.4997 10.2083C12.4557 10.2083 14.0413 8.62267 14.0413 6.66667C14.0413 4.71066 12.4557 3.125 10.4997 3.125ZM5.70801 6.66667C5.70801 4.0203 7.85331 1.875 10.4997 1.875C13.146 1.875 15.2913 4.0203 15.2913 6.66667C15.2913 9.31303 13.146 11.4583 10.4997 11.4583C7.85331 11.4583 5.70801 9.31303 5.70801 6.66667Z" fill="currentColor"></path>
@@ -219,6 +230,8 @@ const Navbar = () => {
                         </svg>
                         {isVisible ?
                         <div className="absolute w-72 -right-8 top-10">
+                        
+                        <div ref={navUser} className="absolute w-72 -right-8 top-10 hidden">
                             <div className="w-20 right-0 h-5 absolute -top-5"></div>
                             <NavUser />
                         </div>

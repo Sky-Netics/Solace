@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { FiMoon } from "react-icons/fi";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
+import Link from "next/link";
 
 
 const NavUser = () => {

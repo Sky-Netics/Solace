@@ -147,18 +147,18 @@ const ProductDetails = () =>{
                         </div>
 
                         <div className="w-[440px] mt-6 max-sm:w-[350px]">
-                            <h1 className="text-[#505050] flex text-[14px]">Color: <p className="ml-1 text-black">Dark beige</p></h1>
+                            <h1 className="text-[#505050] flex text-[14px]">Color: <p className="ml-1 text-black dark:text-white">Dark beige</p></h1>
 
                         <div className="flex w-full mt-4">
                             <button 
-                                className={`w-[48px] h-[48px] bg-[#bf8b51] mr-2 ${indexSelected === 1 && 'border'} border-black`}
+                                className={`w-[48px] h-[48px] bg-[#bf8b51] mr-2 ${indexSelected === 1 && 'border-2'} border-black dark:border-white`}
                                 onClick={()=>indexHandler(1)}    
                             >
 
                             </button>
 
                             <button 
-                                className={`w-[48px] h-[48px] bg-[#c28875] ${indexSelected === 2 && 'border'} border-black`}
+                                className={`w-[48px] h-[48px] bg-[#c28875] ${indexSelected === 2 && 'border-2'} border-black dark:border-white`}
                                 onClick={()=>indexHandler(2)}
                             >
 
@@ -168,9 +168,11 @@ const ProductDetails = () =>{
                         <div className="w-full flex justify-between mt-5 max-sm:flex-col ">
 
                             <div className="border flex justify-between w-[100px]  bg-gray-100 rounded-md items-center">
-                                <button className="w-[30px] py-2 hover:bg-gray-300 rounded-tl-md rounded-bl-md transition" onClick={decreaseCount}>-</button>
-                                    {count}
-                                <button className="w-[30px] py-2 hover:bg-gray-300 rounded-tr-md rounded-br-md transition" onClick={increaseCount}>+</button>
+                                <button className="w-[30px] py-2 hover:bg-gray-300 rounded-tl-md rounded-bl-md transition dark:text-black" onClick={decreaseCount}>-</button>
+                                   <p className="dark:text-black">
+                                   {count}
+                                   </p>
+                                <button className="w-[30px] py-2 hover:bg-gray-300 rounded-tr-md rounded-br-md transition dark:text-black" onClick={increaseCount}>+</button>
                             </div>
 
                             <div className="bg-black text-white w-[330px] rounded-3xl flex justify-center items-center text-[14px] max-sm:mt-5 max-sm:py-2">
