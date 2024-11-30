@@ -30,7 +30,7 @@ const CarouselComponent = ({title}:{title: string}) => {
       >
         <Image src={Image1} alt="Item 1" className="h-[504px] object-cover mb-6" />
         <p>Ashton - Wooden Chair</p>
-        <p className="font-bold mt-4 text-black">€399.00</p>
+        <p className="font-bold mt-4 text-black dark:text-white">€399.00</p>
         
         <div 
           className="bg-[#090909] hover:bg-[#1a1a1a] cursor-pointer text-white py-4 px-4 w-fit rounded-[50%] absolute bottom-[100px] right-5 opacity-0 scale-50 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100"
@@ -54,7 +54,7 @@ const CarouselComponent = ({title}:{title: string}) => {
       key="2">
         <Image src={Image2}  alt="Item 1" className="h-[504px] object-cover mb-6" />
         <p>Savannah - Wooden Chair</p>
-        <p className="font-bold mt-4 text-black">€400.00</p>
+        <p className="font-bold mt-4 text-black dark:text-white">€400.00</p>
   
         <div 
             className="bg-[#090909] hover:bg-[#1a1a1a] cursor-pointer text-white py-4 px-4 w-fit rounded-[50%] absolute bottom-[100px] right-5 opacity-0 scale-50 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100"
@@ -78,7 +78,7 @@ const CarouselComponent = ({title}:{title: string}) => {
       key="3">
         <Image src={Image3}  alt="Item 1" className="h-[504px] object-cover mb-6" />
         <p>Ashton - Oak Recliner</p>
-        <p className="font-bold mt-4 text-black">€1.400.00</p>
+        <p className="font-bold mt-4 text-black dark:text-white">€1.400.00</p>
         <div 
             className="bg-[#090909] hover:bg-[#1a1a1a] cursor-pointer text-white py-4 px-4 w-fit rounded-[50%] absolute bottom-[100px] right-5 opacity-0 scale-50 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100"
           >
@@ -101,7 +101,7 @@ const CarouselComponent = ({title}:{title: string}) => {
       key="4">
         <Image src={Image4}  alt="Item 1" className="h-[504px] object-cover mb-6" />
         <p>Ashton - Steel Lounge Chair</p>
-        <p className="font-bold mt-4 text-black">€234.00</p>
+        <p className="font-bold mt-4 text-black dark:text-white">€234.00</p>
         <div 
             className="bg-[#090909] hover:bg-[#1a1a1a] cursor-pointer text-white py-4 px-4 w-fit rounded-[50%] absolute bottom-[100px] right-5 opacity-0 scale-50 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100"
           >
@@ -124,7 +124,7 @@ const CarouselComponent = ({title}:{title: string}) => {
         key="5">
           <Image src={Image5}  alt="Item 1" className="h-[504px] object-cover mb-6" />
           <p>Ashton - Leather Accent Chair</p>
-          <p className="font-bold mt-4 text-black">€1,350.00</p>
+          <p className="font-bold mt-4 text-black dark:text-white">€1,350.00</p>
           <div 
             className="bg-[#090909] hover:bg-[#1a1a1a] cursor-pointer text-white py-4 px-4 w-fit rounded-[50%] absolute bottom-[100px] right-5 opacity-0 scale-50 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100"
           >
@@ -147,7 +147,7 @@ const CarouselComponent = ({title}:{title: string}) => {
         key="6">
           <Image src={Image6}  alt="Item 1" className="h-[504px] object-cover mb-6" />
           <p>Savannah - Wooden Oak Chair</p>
-          <p className="font-bold mt-4 text-black">€550.00</p>
+          <p className="font-bold mt-4 text-black dark:text-white">€550.00</p>
           <div 
             className="bg-[#090909] hover:bg-[#1a1a1a] cursor-pointer text-white py-4 px-4 w-fit rounded-[50%] absolute bottom-[100px] right-5 opacity-0 scale-50 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100"
           >
@@ -170,7 +170,7 @@ const CarouselComponent = ({title}:{title: string}) => {
         key="7">
           <Image src={Image7}  alt="Item 1" className="h-[504px] object-cover mb-6" />
           <p>Savannah - Teak Dining Chair</p>
-          <p className="font-bold mt-4 text-black">€499.00</p>
+          <p className="font-bold mt-4 text-black dark:text-white">€499.00</p>
           <div 
             className="bg-[#090909] hover:bg-[#1a1a1a] cursor-pointer text-white py-4 px-4 w-fit rounded-[50%] absolute bottom-[100px] right-5 opacity-0 scale-50 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100"
           >
@@ -193,7 +193,7 @@ const CarouselComponent = ({title}:{title: string}) => {
         key="8">
             <Image src={Image8}  alt="Item 1" className="h-[504px] object-cover mb-6" />
             <p>Winsdor - Wingback Chair</p>
-            <p className="font-bold mt-4 text-black">€750.00</p>
+            <p className="font-bold mt-4 text-black dark:text-white">€750.00</p>
             <div 
             className="bg-[#090909] hover:bg-[#1a1a1a] cursor-pointer text-white py-4 px-4 w-fit rounded-[50%] absolute bottom-[100px] right-5 opacity-0 scale-50 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100"
           >
@@ -222,7 +222,7 @@ const CarouselComponent = ({title}:{title: string}) => {
         <div className="flex justify-between mb-10 h-[45px]">
           <button
             onClick={() => carouselRef.current?.slidePrev()}
-            className="bg-gray-200 px-[13px] rounded-[50%] mr-3"
+            className="bg-gray-200 px-[13px] rounded-[50%] mr-3 dark:text-black"
           >
             <svg
               width="20"
@@ -243,7 +243,7 @@ const CarouselComponent = ({title}:{title: string}) => {
 
           <button
             onClick={() => carouselRef.current?.slideNext()}
-            className="bg-gray-200 px-[13px] rounded-[50%]"
+            className="bg-gray-200 px-[13px] rounded-[50%] dark:text-black"
           >
             <svg
               width="20"

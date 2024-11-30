@@ -3,6 +3,7 @@
 import React from "react";
 import { FiMoon } from "react-icons/fi";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
+import Link from "next/link";
 
 interface ChildComponentProps {
     func: ()=>void;
@@ -21,8 +22,14 @@ const NavUser : React.FC<ChildComponentProps> = ({func}) => {
     return ( 
         <div className="bg-white border-black border">
             <div className="p-2">
-                <div className="mb-2"><button className="bg-black text-white w-full py-[10px] rounded-3xl">Sign in</button></div>
-                <div><button className="bg-gray-300 hover:bg-gray-400 text-black w-full py-2 rounded-3xl">Sign up</button></div>
+                <Link href={'/account'}>
+                    <div className="mb-2"><button className="bg-black text-white w-full py-[10px] rounded-3xl">Sign in</button></div>
+                </Link>
+
+                <Link href={'/account'}>
+                    <div><button className="bg-gray-300 hover:bg-gray-400 text-black w-full py-2 rounded-3xl">Sign up</button></div>
+                </Link>
+                
             </div>
             <hr className="border-gray-300"/>
             <div className="p-3 text-black">
