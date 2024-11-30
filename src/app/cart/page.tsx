@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import CarouselComponent from "../components/CarouselComponent/CarouselComponent";
 import CartEmpty from "../components/cartEmpty/cartEmpty";
 import CartItem from "../components/cartItem/cartItem";
