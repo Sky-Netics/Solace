@@ -13,7 +13,7 @@ const BlogPost = () =>{
     return(
         <div className="flex flex-col px-[100px] py-10">
             
-            <div className="">
+            <div>
                 <div className="mb-3 flex">
                     <Link href={'/'} className="mr-2">Home page</Link>
                     <p>/</p>
