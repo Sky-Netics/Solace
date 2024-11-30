@@ -1,7 +1,23 @@
+"use client"
+
+import React from "react";
 import { FiMoon } from "react-icons/fi";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 
-const NavUser = () => {
+interface ChildComponentProps {
+    func: ()=>void;
+}
+
+const NavUser : React.FC<ChildComponentProps> = ({func}) => {
+
+    const switchTheme = ()=>{
+        if (document.documentElement.classList[0] === undefined)
+            document.documentElement.classList.add("dark");
+        else 
+            document.documentElement.classList.remove("dark");
+        func()
+    }
+
     return ( 
         <div className="bg-white border-black border">
             <div className="p-2">
@@ -9,8 +25,8 @@ const NavUser = () => {
                 <div><button className="bg-gray-300 hover:bg-gray-400 text-black w-full py-2 rounded-3xl">Sign up</button></div>
             </div>
             <hr className="border-gray-300"/>
-            <div className="p-3">
-                <div className="h-14 cursor-pointer hover:bg-gray-200 p-2 flex">
+            <div className="p-3 text-black">
+                <div onClick={switchTheme} className="h-14 cursor-pointer hover:bg-gray-200 p-2 flex">
                     <div className="flex gap-3 items-center">
                         <FiMoon size={26}/>
                         <p >Switch to dark mode</p>
