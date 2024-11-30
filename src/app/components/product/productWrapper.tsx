@@ -16,6 +16,9 @@ const fetchData = async (url:string)=>{
     return response.json()
 }
 
+// type of storing items in a cookie 
+// {"id":{"q":1},...}
+// {"1":{"q":2},"2":{"q":1}}
 
 const ProductWrapper = async ({url,topic,path}:{url:string,topic:string,path:string}) => {
     const products:ProductType[] = await fetchData(url);

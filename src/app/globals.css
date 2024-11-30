@@ -15,6 +15,13 @@
     --transparent: #090909;
   }
 }
+.dark{
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --transparent: #090909;
+
+}
+
 
 body {
   color: var(--foreground);
