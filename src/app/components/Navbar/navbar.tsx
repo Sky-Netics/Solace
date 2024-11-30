@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 import { AnimatePresence ,motion } from "framer-motion";
 import NavUser from "../navUser/navUser";
+import NavSearch from "../navSearch/navSearch";
 
 
 type Navs= {
