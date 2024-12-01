@@ -14,7 +14,8 @@ const Navbar = () => {
     const route = usePathname()
     const [showResponsiveHeader, setShowResponsiveHeader] = useState<boolean>(false)
     const [isShopListOpen, setIsShopListOpen] = useState(false)
-    const [isVisible,setIsVisible] = useState(false);
+    const [iscollectionListOpen, setIsCollectionListOpen] = useState(false)
+    const [isVisible, setIsVisible] = useState(false);
 
     const navUser = useRef<HTMLDivElement|null>(null);
 
@@ -54,10 +55,12 @@ const Navbar = () => {
     const openShopList = () => setIsShopListOpen(true);
     const closeShopList = () => setIsShopListOpen(false);
 
+    const openCollectionList = () => setIsCollectionListOpen(true)
+    const closeCollectionList = () => setIsCollectionListOpen(false)
     return ( 
-       <div className="fixed top-0 left-0 w-full z-50 bg-background">
+       <div className="fixed top-0 left-0 w-full z-50 bg-background ">
 
-        <div className="flex justify-between items-center border-b  px-[87px] max-xl:px-[45px] max-sm:px-0">
+        <div className="flex justify-between items-center border-b px-[87px] max-xl:px-[45px] max-sm:px-0 max-[900px]:py-5">
 
             <div className="max-[900px]:hidden">
                     <ul className="flex h-full ">
@@ -103,12 +106,30 @@ const Navbar = () => {
                                 initial="hidden"
                                 animate="visible"
                                 transition={{ delay: 0.1 * 1 , duration: 0.3 }}
+                                onMouseEnter={openCollectionList} 
+                                onMouseLeave={closeCollectionList}
                                 >
                                 <Link 
                                     href={'/shop'} 
                                     className={`inline-block p-2  ${route === '/collections' ? 'border-b border-black dark:border-white' : ''}`}>
                                     Collections
                                 </Link>
+
+                                <AnimatePresence>
+                                    {iscollectionListOpen && (
+                                        <motion.div 
+                                            initial="hidden"
+                                            animate="visible"
+                                            transition={{ delay: 0.1 * 1, duration: 0.4 }}
+                                            variants={linkVariants}
+                                            exit="hidden"
+                                            className="absolute w-full top-[80px] left-0">
+                                            <div className="w-full h-5 absolute"></div>
+                                            <CollectionList />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+
                                 </motion.li>
 
                                 <motion.li
