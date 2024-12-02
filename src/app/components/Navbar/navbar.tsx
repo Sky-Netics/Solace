@@ -7,17 +7,19 @@ import { AnimatePresence ,motion } from "framer-motion";
 import NavUser from "../navUser/navUser";
 import ShopList from "../ShopList/shopList";
 import CollectionList from "../CollectionList/collectionList";
+import NavSearch from "../navSearch/navSearch";
 
 
 const Navbar = () => {
+    const navUser = useRef<HTMLDivElement|null>(null)
 
     const route = usePathname()
     const [showResponsiveHeader, setShowResponsiveHeader] = useState<boolean>(false)
     const [isShopListOpen, setIsShopListOpen] = useState(false)
     const [iscollectionListOpen, setIsCollectionListOpen] = useState(false)
-    const [isVisible, setIsVisible] = useState(false);
 
-    const navUser = useRef<HTMLDivElement|null>(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const [navSearchVisible,setNavSearchVisible] = useState(false);
 
     const showHeaderHandler = ()=>{
         setShowResponsiveHeader((prev)=> !prev)
@@ -35,28 +37,19 @@ const Navbar = () => {
       visible: { opacity: 1, y: 0 },
     };
 
-    const openNavUser = ()=>{
-        navUser.current?.classList.remove("hidden")
-    }
-    const closeNavUser = ()=>{
-        navUser.current?.classList.add("hidden")
-    }
+    const handleMouseEnter = ()=> setIsVisible(true);
+    const handleMouseLeave = ()=> setIsVisible(false);
+    const handleClick = ()=> setIsVisible(!isVisible);
 
-    const handleMouseEnter = ()=>{
-
-    }
-    const handleMouseLeave = ()=>{
-
-    }
-    const handleClick = ()=>{
-        
-    }
+    const openNavSearch = ()=> setNavSearchVisible(true)
+    const closeNavSearch = ()=> setNavSearchVisible(false)
 
     const openShopList = () => setIsShopListOpen(true);
     const closeShopList = () => setIsShopListOpen(false);
 
     const openCollectionList = () => setIsCollectionListOpen(true)
     const closeCollectionList = () => setIsCollectionListOpen(false)
+
     return ( 
        <div className="fixed top-0 left-0 w-full z-50 bg-background ">
 
@@ -243,27 +236,39 @@ const Navbar = () => {
             <div>
                 <ul className="flex items-center px-5 ml-20 gap-1">
 
-                    <li className="hover:bg-gray-300 rounded-3xl w-[45px] h-[45px] flex justify-center items-center cursor-pointer transition">
+                    <li onClick={openNavSearch} className="rounded-3xl mx-2 flex justify-center items-center">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <title>Search icon</title>
                             <path fillRule="evenodd" clipRule="evenodd" d="M9.66667 3.125C6.32995 3.125 3.625 5.82995 3.625 9.16667C3.625 12.5034 6.32995 15.2083 9.66667 15.2083C13.0034 15.2083 15.7083 12.5034 15.7083 9.16667C15.7083 5.82995 13.0034 3.125 9.66667 3.125ZM2.375 9.16667C2.375 5.13959 5.63959 1.875 9.66667 1.875C13.6937 1.875 16.9583 5.13959 16.9583 9.16667C16.9583 13.1937 13.6937 16.4583 9.66667 16.4583C5.63959 16.4583 2.375 13.1937 2.375 9.16667Z" fill="currentColor"></path>
                             <path fillRule="evenodd" clipRule="evenodd" d="M13.9747 13.4747C14.2188 13.2306 14.6145 13.2306 14.8586 13.4747L18.4419 17.0581C18.686 17.3021 18.686 17.6979 18.4419 17.9419C18.1979 18.186 17.8021 18.186 17.5581 17.9419L13.9747 14.3586C13.7306 14.1145 13.7306 13.7188 13.9747 13.4747Z" fill="currentColor"></path>
                         </svg>
                     </li>
+                    {navSearchVisible ? 
+                    <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}>
+                    <NavSearch func={closeNavSearch} /></motion.div>
+                    : <></>}
 
-                    <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} className="rounded-3xl mx-2 flex justify-center items-center relative z-10">
+                    <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} className="rounded-3xl mx-2 flex justify-center items-center relative">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <title>User Icon</title>
                             <path fillRule="evenodd" clipRule="evenodd" d="M10.4997 3.125C8.54367 3.125 6.95801 4.71066 6.95801 6.66667C6.95801 8.62267 8.54367 10.2083 10.4997 10.2083C12.4557 10.2083 14.0413 8.62267 14.0413 6.66667C14.0413 4.71066 12.4557 3.125 10.4997 3.125ZM5.70801 6.66667C5.70801 4.0203 7.85331 1.875 10.4997 1.875C13.146 1.875 15.2913 4.0203 15.2913 6.66667C15.2913 9.31303 13.146 11.4583 10.4997 11.4583C7.85331 11.4583 5.70801 9.31303 5.70801 6.66667Z" fill="currentColor"></path>
                             <path fillRule="evenodd" clipRule="evenodd" d="M5.34369 12.344C6.71114 10.9766 8.5658 10.2083 10.4997 10.2083C12.4335 10.2083 14.2882 10.9766 15.6557 12.344C17.0231 13.7115 17.7913 15.5661 17.7913 17.5C17.7913 17.8452 17.5115 18.125 17.1663 18.125C16.8212 18.125 16.5413 17.8452 16.5413 17.5C16.5413 15.8976 15.9048 14.3609 14.7718 13.2279C13.6387 12.0949 12.102 11.4583 10.4997 11.4583C8.89732 11.4583 7.3606 12.0949 6.22757 13.2279C5.09454 14.3609 4.45801 15.8976 4.45801 17.5C4.45801 17.8452 4.17819 18.125 3.83301 18.125C3.48783 18.125 3.20801 17.8452 3.20801 17.5C3.20801 15.5661 3.97623 13.7115 5.34369 12.344Z" fill="currentColor"></path>
                         </svg>
                         {isVisible ?
-                        <div className="absolute w-72 -right-8 top-10">
-                        <div ref={navUser} className="absolute w-72 -right-8 top-10 hidden">
-                            <div className="w-20 right-0 h-5 absolute -top-5"></div>
-                            <NavUser />
-                        </div>
-                        </div>
+                        <motion.div className="absolute w-72 -right-8 top-0"
+                        initial={{ opacity: 0,x:20 }}
+                        animate={{ opacity: 1,x:0 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}>
+                            <div ref={navUser} className="absolute w-72 right-0 top-10">
+                                <div className="w-20 right-0 h-5 absolute -top-5"></div>
+                                <NavUser />
+                            </div>
+                        </motion.div>
                         : <></>}
                     </li>
 
