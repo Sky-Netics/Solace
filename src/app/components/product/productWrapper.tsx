@@ -10,7 +10,8 @@ const fetchData = async (url:string)=>{
         method:"GET",
         headers:{
             "Content-Type":"application/json",
-            "Accept":"application/json"
+            "Accept":"application/json",
+            "x-publishable-api-key":"pk_78dbacd39fb1e3331dd2df342cf7cb798e32a587187049f1f2bc2a18e9afd7ce",
         }
     })
     return response.json()
@@ -21,7 +22,8 @@ const fetchData = async (url:string)=>{
 // {"1":{"q":2},"2":{"q":1}}
 
 const ProductWrapper = async ({url,topic,path}:{url:string,topic:string,path:string}) => {
-    const products:shopType[] = await fetchData(url);
+    const response = await fetchData(url);
+    const products:shopType[] = response.products
     const productlength = products.length
     
     return ( 
@@ -45,15 +47,15 @@ const ProductWrapper = async ({url,topic,path}:{url:string,topic:string,path:str
                             <div key={i}>
                                 <div className="mb-5 w-full relative group">
                                     <Link href={`/shop/${product.title.replaceAll(' ', '-')}`}>
-                                    <Image className="w-full h-80 sm:h-[500px]" src={product.image} width={400} height={1000} alt={`prodcut${i}`} priority/>
+                                    <Image className="w-full h-80 sm:h-[500px]" src={product.thumbnail} width={400} height={1000} alt={`prodcut${i}`} priority/>
                                     </Link>
-                                    <div className="bg-white w-12 rounded-full h-12 absolute bottom-3 right-3 flex justify-center items-center transition-opacity duration-300 sm:opacity-0 group-hover:opacity-100"><IoCartOutline size={25} color="black"/></div>
+                                    <div className="bg-foreground w-12 rounded-full h-12 absolute bottom-3 right-3 flex justify-center items-center transition-opacity duration-300 sm:opacity-0 group-hover:opacity-100"><IoCartOutline size={25} className="text-background"/></div>
                                 </div>
                                 <div className="text-center">
                                     <Link href={`/shop/${product.title.replaceAll(' ', '-')}`}>
                                     <p>{product.title}</p>
                                     </Link>
-                                    <p className="font-bold my-5">€{product.price}</p>
+                                    <p className="font-bold my-5">€120</p>
                                 </div>
                             </div>
                         )
