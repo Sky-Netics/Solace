@@ -4,6 +4,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { IoCartOutline } from "react-icons/io5";
 import Filter from "../filter/page";
 import shopType from "@/app/interFaces/shopType";
+import ShopAddCart from "../shopAddCart/page";
 
 const fetchData = async (url:string)=>{
     const response = await fetch(url,{
@@ -49,7 +50,7 @@ const ProductWrapper = async ({url,topic,path}:{url:string,topic:string,path:str
                                     <Link href={`/shop/${product.title.replaceAll(' ', '-')}`}>
                                     <Image className="w-full h-80 sm:h-[500px]" src={product.thumbnail} width={400} height={1000} alt={`prodcut${i}`} priority/>
                                     </Link>
-                                    <div className="bg-foreground w-12 rounded-full h-12 absolute bottom-3 right-3 flex justify-center items-center transition-opacity duration-300 sm:opacity-0 group-hover:opacity-100"><IoCartOutline size={25} className="text-background"/></div>
+                                    <ShopAddCart id={product.id}/>
                                 </div>
                                 <div className="text-center">
                                     <Link href={`/shop/${product.title.replaceAll(' ', '-')}`}>
