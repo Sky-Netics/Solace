@@ -6,7 +6,7 @@ const Result = async ({params}:{params:{title:string}}) => {
 
     return (
         <div>
-            <ProductWrapper path={`HomePage / ${title}`} topic={title} url={`https://fakestoreapi.com/products`} />
+            <ProductWrapper path={`HomePage / ${title}`} topic={title} url={`http://ecommerce.soroushsalari.com/store/products`} />
             <div className="mt-16">
                 <CarouselComponent title="Recommended products"/>
             </div>

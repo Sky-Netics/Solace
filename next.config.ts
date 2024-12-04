@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [ 
       {
         protocol: 'https',
-        hostname: 'fakestoreapi.com',
+        hostname: 'medusa-public-images.s3.eu-west-1.amazonaws.com',
         port: '',
         pathname: '/**',
       },
