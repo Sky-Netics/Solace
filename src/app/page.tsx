@@ -8,9 +8,9 @@ import CarouselComponent from "./components/CarouselComponent/CarouselComponent"
 import GetInspired from "./components/GetInspired/GetInspired";
 import Link from "next/link";
 
-export default function Home() {
 
-
+export default async function Home() {
+  
 
   return (
     <div>
