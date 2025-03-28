@@ -24,7 +24,7 @@ const fetchData = async (url:string)=>{
 
 const ProductWrapper = async ({url,topic,path}:{url:string,topic:string,path:string}) => {
     const response = await fetchData(url);
-    const products:shopType[] = response.products
+    const products:shopType[] = response
     const productlength = products.length
     
     return ( 
@@ -48,7 +48,7 @@ const ProductWrapper = async ({url,topic,path}:{url:string,topic:string,path:str
                             <div key={i}>
                                 <div className="mb-5 w-full relative group">
                                     <Link href={`/shop/${product.title.replaceAll(' ', '-')}`}>
-                                    <Image className="w-full h-80 sm:h-[500px]" src={product.thumbnail} width={400} height={1000} alt={`prodcut${i}`} priority/>
+                                    <Image className="w-full h-80 sm:h-[500px]" src={product.src} width={400} height={1000} alt={`prodcut${i}`} priority/>
                                     </Link>
                                     <ShopAddCart id={product.id}/>
                                 </div>
